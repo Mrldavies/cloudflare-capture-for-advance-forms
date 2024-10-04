@@ -1,0 +1,28 @@
+{
+    "name": "mrldavies/ccaf",
+    "description": "Adds Cloudflare Turnstile CAPTURE to Advanced Forms",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Davies",
+            "email": "info@example.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "mrldavies\\CCAF\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.0"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/mrldavies/cloudflare-capture-for-advance-forms"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
