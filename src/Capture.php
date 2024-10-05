@@ -17,9 +17,21 @@ class Capture
     public function init()
     {
         if ($this->siteKey && $this->secretKey) {
+            add_action('wp_enqueue_scripts', [$this, 'addTurnstileScript'], 100);
             add_action('af/form/after_fields', [$this, 'addTurnstileField'], 10, 2);
             add_action('af/form/before_submission', [$this, 'validateTurnstileResponse'], 10, 3);
         }
+    }
+
+    public function addTurnstileScript()
+    {
+        wp_enqueue_script(
+            'turnstile',
+            'https://challenges.cloudflare.com/turnstile/v0/api.js',
+            [],
+            null,
+            true
+        );
     }
 
     public function addTurnstileField($form, $args)
